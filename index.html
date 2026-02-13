@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Victor</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <p>Welcome to my website! I'm Victor, a passionate developer with experience in web development, software engineering, and data science. I enjoy creating innovative solutions and learning new technologies.</p>
+        <button>View Projects</button>
+    </section>
+
+    <section id="skill">
+        <h2>Technologies I Work With</h2>
+        <div class="skills">
+            <div class="skill-info">
+                <span>JavaScript</span>
+                <span class="percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" data-progress="85%"></div>
+            </div>
+        </div>
+        
+        <div class="skills">
+            <div class="skill-info">
+                <span>HTML/CSS</span>
+                <span class="percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" data-progress="90%"></div>
+            </div>
+        </div>
+
+        <div class="skills">
+            <div class="skill-info">
+                <span>React</span>
+                <span class="percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" data-progress="80%"></div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="projects">
+        <h1>PROJECTS</h1>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="/Images/cameraApp.png" alt="">
+                <div class="project-overlay">
+                    <h2>Ai Camera App</h2>
+                    <!-- <p>A mobile application that uses AI to enhance photos and provide real-time editing features.</p> -->
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="/Images/landingPage.png" alt="">
+                <div class="project-overlay">
+                    <h2>Landing Page</h2>
+                    <!-- <p>A responsive landing page for a tech startup with modern design and smooth animations.</p> -->
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="/Images/educationalApp.png" alt="">
+                <div class="project-overlay">
+                    <h2>Educational Platform</h2>
+                    <!-- <p>An online platform for students to access courses, track progress, and interact with instructors.</p> -->
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="/Images/profileImage.png" alt="Profile Image">
+            </div>
+            <div class="profile-info">
+                <h2 class="reveal">About Me</h2>
+                <p class="reveal">I'm Victor, a passionate developer with experience in web development, software engineering, and data science. I enjoy creating innovative solutions and learning new technologies.</p>
+                <p class="reveal">My work focuses on building responsive, user-friendly web applications and solving complex problems through clean, efficient code.</p>
+                <p class="reveal">I am always eager to take on new challenges and collaborate with others to build impactful software solutions.</p>
+                <button class="reveal">View Contact Info</button>
+            </div> 
+        </div>
+    </section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Tell me about your project"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+
+<script src="script.js"></script>    
+</body>
+</html>

@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header div {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+header nav {
+    gap: 20px;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+}
+nav a:hover {
+    color: gray;
+}
+section {
+    padding: 60px 20px;
+    color: white;
+}
+#about {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+
+}
+#about h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+#about p {
+    font-size: 20px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+button {
+    margin-top: 20px;
+    padding: 19px 30px;
+    border: none;
+    background: linear-gradient(90deg, #00ffff, #7a5cff);
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+#skill{
+    padding: 80px 10%;
+}
+#skill h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.skills {
+    margin-bottom: 30px;
+}
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.progress {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 2s ease;
+    width: 0;
+    background: linear-gradient(90deg, #00ffcc, #00aaff, #7a5cff);
+    background-size: 200% 200%;
+    animation: gradientMove 3s ease infinite;
+    box-shadow: o, 0 5px 15px rgba(0, 255, 204, 0.5);
+}
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#projects {
+    padding: 80px 10%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0f0f0f 0%, #141414 100%);
+}
+#projects::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(0,255,204,0.35), transparent 70%);
+    top: -250px;
+    left: -250px;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+    filter: blur(80px);
+    z-index: 0;
+}
+#projects::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(122,92,255,0.35), transparent 70%);
+    bottom: -250px;
+    right: -250px;
+    animation: floatGlow 10s ease-in-out infinite alternate;
+    filter: blur(80px);
+    z-index: 0;
+}
+#projects h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.project-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    transform: translateY(30px);
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.project-overlay h2 {
+    color: white;
+    margin-bottom: 10px;
+    background-color: rgba(57, 57, 57, 0.2);
+    padding: 8px 16px;
+}
+.project-overlay a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.project-overlay p {
+    color: white;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.project-card:hover img {
+    transform: scale(1.1);
+}
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+.project-card:hover {
+    box-shadow: 0 0 30px rgba(215, 226, 10, 0.3);;
+}
+.project-card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#profile {
+    padding: 120px 10%;
+    background: #0c0c14;
+}
+.profile-container {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+.profile-image {
+    flex: 1;
+    position: relative;
+}
+.profile-image img {
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(0.9);
+    transition: transform 0.6s ease;
+}
+.profile-image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,255,255,0.25), transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.profile-image:hover img {
+    transform: scale(1.05);
+}
+.profile-info {
+    flex: 1;
+}
+.profile-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.profile-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+.profile-info button {
+    margin-top: 20px;
+    padding: 20px 30px;
+    border: none;
+    background: linear-gradient(90deg, #00ffff, #7a5cff);
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.profile-info button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* The image responsivenesss */
+@media (max-width: 900px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .profile-image img {
+        height: 400px;
+    }
+}
+
+/* contact */
+#contact {
+    padding: 120px 10%;
+    background: #0b0b12;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Subtle glow background */
+#contact::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, rgba(0,255,255,0.15), transparent 60%);
+    filter: blur(120px);
+    z-index: 0;
+}
+
+#contact h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Glass Form Container */
+#contact form {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    
+}
+
+/* Inputs */
+#contact input,
+#contact textarea {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#contact textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Focus Effect */
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+
+/* Placeholder Color */
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #aaa;
+}
+
+/* Submit Button */
+#contact button {
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00ffff, #7a5cff);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+#contact button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.5);
+}
