@@ -4,6 +4,12 @@
     box-sizing: border-box;
     background-color: black;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 header {
     padding: 20px 40px;
     display: flex;
@@ -65,6 +71,68 @@ button:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 25px rgba(0,255,255,0.4);
 }
+@media (max-width: 992px) {
+
+    header {
+        padding: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin-left: 15px;
+    }
+
+    #about h1 {
+        font-size: 30px;
+    }
+
+    #about p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    header div {
+        font-size: 20px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    #about {
+        height: auto;  /* Remove 50vh on mobile */
+        padding: 40px 15px;
+    }
+
+    #about h1 {
+        font-size: 24px;
+    }
+
+    #about p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 14px 22px;
+        font-size: 14px;
+    }
+}
+
+
 #skill{
     padding: 80px 10%;
 }
@@ -150,8 +218,9 @@ button:hover {
 .project-grid {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
+
 .project-card {
     position: relative;
     overflow: hidden;
@@ -163,11 +232,12 @@ button:hover {
 }
 .project-card img {
     width: 100%;
-    height: 100%;
+    height: 250px;   /* fixed height for consistency */
     object-fit: cover;
     display: block;
     transition: transform 0.7s ease;
 }
+    
 .project-overlay {
     position: absolute;
     inset: 0;
@@ -216,6 +286,47 @@ button:hover {
     opacity: 1;
 }
 
+/* Tablets */
+@media (max-width: 992px) {
+    #projects {
+        padding: 60px 5%;
+    }
+
+    #projects h1 {
+        font-size: 28px;
+    }
+}
+/* Mobile */
+@media (max-width: 600px) {
+    #projects {
+        padding: 40px 5%;
+    }
+
+    #projects h1 {
+        font-size: 22px;
+    }
+
+    .project-overlay {
+        padding: 15px;
+    }
+
+    .project-overlay h2 {
+        font-size: 16px;
+    }
+
+    .project-overlay p,
+    .project-overlay a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+@media (max-width: 600px) {
+    .project-overlay {
+        opacity: 1;
+    }
+}
+
+/* Profile */
 #profile {
     padding: 120px 10%;
     background: #0c0c14;
@@ -265,13 +376,17 @@ button:hover {
 }
 .profile-info button {
     margin-top: 20px;
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
     border: none;
     background: linear-gradient(90deg, #00ffff, #7a5cff);
     color: white;
     border-radius: 30px;
     cursor: pointer;
     transition: 0.4s ease;
+    padding: 1.2em 2em; /* use relative units instead of px */
+    font-size: 1rem;    /* scalable font */
+    max-width: 100%;    /* prevents overflow */
+    box-sizing: border-box;
 }
 .profile-info button:hover {
     transform: translateY(-3px);
@@ -288,17 +403,69 @@ button:hover {
     transform: translateY(0);
 }
 
-
-/* The image responsivenesss */
-@media (max-width: 900px) {
-    .profile-container {
-        flex-direction: column;
-    }
-
-    .profile-image img {
-        height: 400px;
+/* Responsiveness */
+@media (max-width: 768px) {
+    #profile {
+        padding: 80px 5%;
     }
 }
+
+@media (max-width: 480px) {
+    #profile {
+        padding: 60px 3%;
+    }
+}
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+.profile-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .profile-info h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .profile-info p {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-info h2 {
+        font-size: 24px;
+    }
+    .profile-info p {
+        font-size: 14px;
+    }
+    .profile-info button {
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .profile-info button {
+        padding: 1em 1.5em;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-info button {
+        padding: 0.8em 1em;
+        font-size: 0.9rem;
+        width: 100%;       /* make the button full width on mobile */
+    }
+}
+
+
 
 /* contact */
 #contact {
@@ -394,3 +561,4 @@ button:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 25px rgba(0,255,255,0.5);
 }
+
