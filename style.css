@@ -16,6 +16,10 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+.logo img {
+    width: 80px;
+}
+
 header div {
     font-size: 24px;
     font-weight: bold;
