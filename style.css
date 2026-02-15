@@ -1,3 +1,13 @@
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -223,16 +233,18 @@ button:hover {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    overflow: hidden;
 }
 
 .project-card {
     position: relative;
-    overflow: hidden;
     border-radius: 16px;
     transform: translateY(30px);
     cursor: pointer;
     opacity: 0;
     transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    overflow: hidden;
 }
 .project-card img {
     width: 100%;
@@ -503,7 +515,8 @@ button:hover {
 
 /* Glass Form Container */
 #contact form {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -565,4 +578,120 @@ button:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 25px rgba(0,255,255,0.5);
 }
+
+
+#projects,
+#contact,
+#profile {
+    overflow: hidden;
+}
+
+
+
+.footer {
+    background: #0a0a12;
+    padding: 80px 10% 30px;
+    position: relative;
+    overflow: hidden;
+}
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    bottom: -400px;
+    right: -300px;
+    background: radial-gradient(circle, rgba(122,92,255,0.25), transparent 70%);
+    filter: blur(120px);
+    z-index: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+}
+
+.footer-left h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-left span {
+    background: linear-gradient(90deg, #00ffff, #7a5cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-left p {
+    max-width: 300px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.footer-links,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+.footer-links a,
+.footer-social a {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #00ffff;
+    transform: translateX(5px);
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 992px) {
+    .footer-container {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-left p {
+        max-width: 100%;
+    }
+
+    .footer-links,
+    .footer-social {
+        align-items: center;
+    }
+}
+
+
+
 
