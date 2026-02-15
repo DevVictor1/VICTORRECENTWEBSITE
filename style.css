@@ -491,20 +491,31 @@ button:hover {
     align-items: center;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Subtle glow background */
 #contact::before {
     content: "";
     position: absolute;
-    width: 700px;
-    height: 700px;
-    top: -200px;
-    left: -200px;
+    width: 400px;
+    height: 400px;
+    left: -150px;
+    top: -150px;
     background: radial-gradient(circle, rgba(0,255,255,0.15), transparent 60%);
     filter: blur(120px);
     z-index: 0;
 }
+@media (max-width: 600px) {
+    #contact::before {
+        width: 400px;
+        height: 400px;
+        left: -150px;
+        top: -150px;
+    }
+}
+
 
 #contact h2 {
     font-size: 40px;
