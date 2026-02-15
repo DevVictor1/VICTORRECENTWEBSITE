@@ -52,25 +52,107 @@ section {
     padding: 60px 20px;
     color: white;
 }
-#about {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    gap: 20px;
+#hero {
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    height: 50vh;
-
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
 }
-#about h1 {
-    font-size: 36px;
+
+#hero h1 {
+    font-size: 48px;
+    max-width: 900px;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
-#about p {
+
+#hero p {
     font-size: 20px;
-    max-width: 600px;
+    max-width: 700px;
+    color: #ccc;
     line-height: 1.6;
 }
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.primary-btn {
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    background: linear-gradient(90deg, #00ffff, #7a5cff);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+.secondary-btn {
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.gradient-text {
+    background: linear-gradient(
+        90deg,
+        #00ffff,
+        #7a5cff,
+        #00ffff
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.gradient-text {
+    filter: drop-shadow(0 0 10px rgba(122,92,255,0.4));
+}
+
+
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 32px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+}
+
+
 button {
     margin-top: 20px;
     padding: 19px 30px;
@@ -399,9 +481,9 @@ button:hover {
     border-radius: 30px;
     cursor: pointer;
     transition: 0.4s ease;
-    padding: 1.2em 2em; /* use relative units instead of px */
-    font-size: 1rem;    /* scalable font */
-    max-width: 100%;    /* prevents overflow */
+    padding: 1.2em 2em; 
+    font-size: 1rem;    
+    max-width: 100%;    
     box-sizing: border-box;
 }
 .profile-info button:hover {
@@ -626,11 +708,17 @@ button:hover {
     padding: 40px;
 }
 
-.footer-left h2 {
+/* .footer-left h2 {
     font-size: 28px;
     margin-bottom: 15px;
     color: white;
+} */
+
+.footer-left img {
+    width: 120px;
+    margin-bottom: 20px;
 }
+
 
 .footer-left span {
     background: linear-gradient(90deg, #00ffff, #7a5cff);

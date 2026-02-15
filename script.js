@@ -151,3 +151,29 @@ function initCounters() {
 
     observer.observe(statsSection);
 }
+
+const filterButtons = document.querySelectorAll(".filter-buttons button");
+const projectItems = document.querySelectorAll(".project-item");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        document.querySelector(".filter-buttons .active")
+            .classList.remove("active");
+
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        projectItems.forEach(item => {
+
+            if (filter === "all" || item.classList.contains(filter)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+
+        });
+
+    });
+});
