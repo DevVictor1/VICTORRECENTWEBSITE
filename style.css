@@ -727,8 +727,11 @@ button:hover {
 
 .page-cta {
     padding: 90px 10%;
+    margin-top: 20px;
     text-align: center;
     background: linear-gradient(180deg, #090910 0%, #11111a 100%);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .page-cta h2 {
@@ -749,6 +752,7 @@ button:hover {
 .footer {
     background: #0a0a12;
     padding: 80px 10% 30px;
+    margin-top: 0;
     position: relative;
     overflow: hidden;
 }
@@ -859,6 +863,7 @@ button:hover {
 @media (max-width: 768px) {
     .page-cta {
         padding: 70px 6%;
+        margin-top: 12px;
     }
 
     .page-cta h2 {

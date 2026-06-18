@@ -117,6 +117,7 @@ nav a[aria-current="page"] {
 }
 .projects-gallery {
     padding: 80px 10%;
+    margin-bottom: 40px;
     /* background: #0b0b12; */
 }
 
@@ -124,12 +125,16 @@ nav a[aria-current="page"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
+    align-items: stretch;
 }
 .project-item {
+    display: flex;
+    flex-direction: column;
     background: #111;
     border-radius: 20px;
     overflow: hidden;
     transition: 0.5s ease;
+    min-height: 100%;
 }
 
 .project-item img {
@@ -144,6 +149,9 @@ nav a[aria-current="page"] {
 }
 
 .project-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 25px;
 }
 
@@ -158,6 +166,9 @@ nav a[aria-current="page"] {
 }
 
 .project-info a {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: auto;
     text-decoration: none;
     color: #00ffff;
     transition: 0.3s ease;
@@ -198,6 +209,11 @@ nav a[aria-current="page"] {
 
     .project-info {
         padding: 18px;
+    }
+
+    .projects-gallery {
+        padding: 60px 5%;
+        margin-bottom: 24px;
     }
 }
 
