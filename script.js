@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initProjects();
     initReveal();
     initCounters(); // for about page stats
+    initProjectFilters();
 
 });
 
@@ -152,28 +153,35 @@ function initCounters() {
     observer.observe(statsSection);
 }
 
-const filterButtons = document.querySelectorAll(".filter-buttons button");
-const projectItems = document.querySelectorAll(".project-item");
+function initProjectFilters() {
 
-filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
+    const filterButtons = document.querySelectorAll(".filter-buttons button");
+    const projectItems = document.querySelectorAll(".project-item");
 
-        document.querySelector(".filter-buttons .active")
-            .classList.remove("active");
+    if (filterButtons.length === 0 || projectItems.length === 0) return;
 
-        button.classList.add("active");
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
 
-        const filter = button.getAttribute("data-filter");
-
-        projectItems.forEach(item => {
-
-            if (filter === "all" || item.classList.contains(filter)) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
+            const activeButton = document.querySelector(".filter-buttons .active");
+            if (activeButton) {
+                activeButton.classList.remove("active");
             }
 
-        });
+            button.classList.add("active");
 
+            const filter = button.getAttribute("data-filter");
+
+            projectItems.forEach(item => {
+
+                if (filter === "all" || item.classList.contains(filter)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+
+            });
+
+        });
     });
-});
+}

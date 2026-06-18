@@ -3,60 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects | VictorDEV Portfolio</title>
+    <meta name="description" content="Explore VictorDEV projects across web, apps, and automation, with a focus on high-performance interfaces and modern digital product experiences.">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="Images/vicDEV.png" alt="Logo"></a>
+            <a href="index.html"><img src="Images/vicDEV.png" alt="VictorDEV logo"></a>
         </div>
         <nav>
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
+            <a href="projects.html" aria-current="page">Projects</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-<section class="projects-hero">
-    <h1 class="gradient-text">My Projects</h1>
-    <p>
-        A collection of high-performance digital solutions built with precision and creativity.
-    </p>
-</section>
+    <section class="projects-hero">
+        <h1 class="gradient-text">My Projects</h1>
+        <p>
+            A collection of high-performance digital solutions built with precision and creativity.
+        </p>
+    </section>
 
-<section class="projects-gallery">
+    <section class="projects-gallery">
+        <div class="filter-buttons">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="web">Web</button>
+            <button data-filter="app">Apps</button>
+            <button data-filter="bot">Bots</button>
+        </div>
 
-    <div class="filter-buttons">
-        <button data-filter="all" class="active">All</button>
-        <button data-filter="web">Web</button>
-        <button data-filter="app">Apps</button>
-        <button data-filter="bot">Bots</button>
-    </div>
+        <div class="projects-grid">
+            <div class="project-item web">
+                <img src="Images/landingPage.png" alt="Preview of a modern portfolio landing page">
+                <div class="project-info">
+                    <h3>Modern Portfolio</h3>
+                    <p>High-performance personal website.</p>
+                    <a href="contact.html">Discuss Similar Project &rarr;</a>
+                </div>
+            </div>
 
-    <div class="projects-grid">
+            <div class="project-item app">
+                <img src="Images/cameraApp.png" alt="Preview of an AI camera mobile application">
+                <div class="project-info">
+                    <h3>Camera App</h3>
+                    <p>Productivity mobile application.</p>
+                    <a href="contact.html">Discuss Similar Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="project-item web">
-            <img src="Images/landingPage.png" alt="">
-            <div class="project-info">
-                <h3>Modern Portfolio</h3>
-                <p>High-performance personal website.</p>
-                <a href="#">Live Demo →</a>
+    <section class="page-cta">
+        <h2>Need a website, app, or automation system with this kind of energy?</h2>
+        <p>Tell me what you're building, what stage you're in, and what outcome you need. I can help shape the next step.</p>
+        <a href="contact.html" class="primary-btn">Start a Project Conversation</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="index.html"><img src="Images/vicDEV.png" alt="VictorDEV logo"></a>
+                <p>
+                    Building futuristic digital experiences, intelligent apps,
+                    and immersive web solutions.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Reach Out</h3>
+                <a href="mailto:victornet301@gmail.com">victornet301@gmail.com</a>
+                <a href="tel:+2349167688961">+234 916 768 8961</a>
+                <a href="contact.html">Start a Project</a>
             </div>
         </div>
 
-        <div class="project-item app">
-            <img src="Images/cameraApp.png" alt="">
-            <div class="project-info">
-                <h3>Camera App</h3>
-                <p>Productivity mobile application.</p>
-                <a href="#">Live Demo →</a>
-            </div>
+        <div class="footer-bottom">
+            &copy; 2026 VictorDEV. All rights reserved.
         </div>
+    </footer>
 
-    </div>
-
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

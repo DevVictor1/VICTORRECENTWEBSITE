@@ -44,9 +44,16 @@ nav a {
     color: white;
     font-size: 18px;
     margin-left: 20px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 nav a:hover {
     color: gray;
+}
+nav a[aria-current="page"] {
+    color: #00ffff;
+    border-bottom-color: #00ffff;
 }
 /* Responsiveness */
 @media (max-width: 768px) {
